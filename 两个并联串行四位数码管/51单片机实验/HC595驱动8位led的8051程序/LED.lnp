@@ -1,0 +1,4 @@
+"STARTUP.obj",
+"74HC595.obj",
+"SMG2Bit4S.obj" 
+TO "LED" 

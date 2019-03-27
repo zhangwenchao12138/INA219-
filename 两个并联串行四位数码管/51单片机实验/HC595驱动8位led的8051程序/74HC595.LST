@@ -1,0 +1,34 @@
+C51 COMPILER V9.52.0.0   74HC595                                                           03/27/2019 17:11:44 PAGE 1   
+
+
+C51 COMPILER V9.52.0.0, COMPILATION OF MODULE 74HC595
+OBJECT MODULE PLACED IN 74HC595.OBJ
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE 74HC595.c TABS(2)
+
+line level    source
+
+   1          #include <reg51.H>
+   2          #include "SMG2Bit4S.h"
+   3          
+   4          // Ö÷³ÌÐò
+   5          void main (void) 
+   6          {
+   7   1        while(1)
+   8   1        {
+   9   2          SMG_Display2Bit4SMG(1,2,3,4, 5, 6, 7, 8);
+  10   2        } 
+  11   1      } 
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     47    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

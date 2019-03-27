@@ -1,0 +1,57 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/27/2019  17:12:52  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+D:\KEIL4\C51\BIN\BL51.EXE STARTUP.obj, 74HC595.obj, SMG2Bit4S.obj TO LED
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  STARTUP.obj (?C_STARTUP)
+  74HC595.obj (74HC595)
+  SMG2Bit4S.obj (SMG2BIT4S)
+
+
+LINK MAP OF MODULE:  LED (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001AH     UNIT         _DATA_GROUP_
+            IDATA   0022H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     007AH     UNIT         ?PR?_SMG_DISPLAY2BIT4SMG?SMG2BIT4S
+            CODE    007DH     002FH     UNIT         ?PR?MAIN?74HC595
+            CODE    00ACH     0017H     UNIT         ?PR?_SMG_OUTI?SMG2BIT4S
+            CODE    00C3H     0017H     UNIT         ?PR?_SMG_OUTV?SMG2BIT4S
+            CODE    00DAH     0012H     UNIT         ?CO?SMG2BIT4S
+            CODE    00ECH     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   LED (?C_STARTUP)
+
+
+SEGMENT                                      DATA_GROUP 
+  +--> CALLED SEGMENT                      START    LENGTH
+----------------------------------------------------------
+?C_C51STARTUP                              -----    -----
+  +--> ?PR?MAIN?74HC595
+
+?PR?MAIN?74HC595                           -----    -----
+  +--> ?PR?_SMG_DISPLAY2BIT4SMG?SMG2BIT4S
+
+?PR?_SMG_DISPLAY2BIT4SMG?SMG2BIT4S         0008H    001AH
+  +--> ?CO?SMG2BIT4S
+  +--> ?PR?_SMG_OUTI?SMG2BIT4S
+  +--> ?PR?_SMG_OUTV?SMG2BIT4S
+
+Program Size: data=35.0 xdata=0 code=248
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
