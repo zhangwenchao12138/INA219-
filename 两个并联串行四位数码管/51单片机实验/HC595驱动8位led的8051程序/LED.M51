@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22                                                        03/27/2019  17:12:52  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22                                                        03/27/2019  18:24:38  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
@@ -27,12 +27,12 @@ LINK MAP OF MODULE:  LED (?C_STARTUP)
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
-            CODE    0003H     007AH     UNIT         ?PR?_SMG_DISPLAY2BIT4SMG?SMG2BIT4S
-            CODE    007DH     002FH     UNIT         ?PR?MAIN?74HC595
-            CODE    00ACH     0017H     UNIT         ?PR?_SMG_OUTI?SMG2BIT4S
-            CODE    00C3H     0017H     UNIT         ?PR?_SMG_OUTV?SMG2BIT4S
-            CODE    00DAH     0012H     UNIT         ?CO?SMG2BIT4S
-            CODE    00ECH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0003H     00A4H     UNIT         ?PR?_SMG_DISPLAY2BIT4SMG?SMG2BIT4S
+            CODE    00A7H     002FH     UNIT         ?PR?MAIN?74HC595
+            CODE    00D6H     0017H     UNIT         ?PR?_SMG_OUTI?SMG2BIT4S
+            CODE    00EDH     0017H     UNIT         ?PR?_SMG_OUTV?SMG2BIT4S
+            CODE    0104H     0012H     UNIT         ?CO?SMG2BIT4S
+            CODE    0116H     000CH     UNIT         ?C_C51STARTUP
 
 
 
@@ -53,5 +53,5 @@ SEGMENT                                      DATA_GROUP
   +--> ?PR?_SMG_OUTI?SMG2BIT4S
   +--> ?PR?_SMG_OUTV?SMG2BIT4S
 
-Program Size: data=35.0 xdata=0 code=248
+Program Size: data=35.0 xdata=0 code=290
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

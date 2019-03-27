@@ -7,29 +7,35 @@ unsigned char code SMG_CODE[] =
 };
 
 //数码管显示四位数据
-void SMG_Display2Bit4SMG (int smg11, int smg12, int smg13, int smg14, int smg21, int smg22, int smg23, int smg24)
+void SMG_Display2Bit4SMG (int smgI1, int smgI2, int smgI3, int smgI4, int smgV1, int smgV2, int smgV3, int smgV4)
 {
 	int num = 0;
 	
 	uchar SMG[2][4]; 		//存储四位数码管要显示的数据
-	SMG[0][0]=smg14;
-	SMG[0][1]=smg13;
-	SMG[0][2]=smg12;
-	SMG[0][3]=smg11;
-	SMG[1][0]=smg24;
-	SMG[1][1]=smg23;
-	SMG[1][2]=smg22;
-	SMG[1][3]=smg21;
+	SMG[0][0]=smgI4;
+	SMG[0][1]=smgI3;
+	SMG[0][2]=smgI2;
+	SMG[0][3]=smgI1;
+	SMG[1][0]=smgV4;
+	SMG[1][1]=smgV3;
+	SMG[1][2]=smgV2;
+	SMG[1][3]=smgV1;
 
 	for(num = 0; num < 4; num++)
 	{
-		SMG_OUTI( ~SMG_CODE[ SMG[0][num] ] );     
+		if(num == 3){
+			SMG_OUTI( ~(SMG_CODE[ SMG[0][num] ] & 0x7f ));     
+			SMG_OUTV( ~(SMG_CODE[ SMG[1][num] ] & 0x7f ));
+		}else{
+			SMG_OUTI( ~SMG_CODE[ SMG[0][num] ] );     
+			SMG_OUTV( ~SMG_CODE[ SMG[1][num] ] );
+		}
+		
 		SMG_OUTI( 0xF7 >> num );
+		SMG_OUTV( 0xF7 >> num );
+		
 		RCLKI = 0;
 		RCLKI = 1;
-		
-		SMG_OUTV( ~SMG_CODE[ SMG[1][num] ] );     
-		SMG_OUTV( 0xF7 >> num );
 		RCLKV = 0;
 		RCLKV = 1;
 	}
